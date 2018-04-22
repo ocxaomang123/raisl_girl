@@ -13,6 +13,7 @@ group :production do
   gem 'pg'
 end
 gem 'carrierwave'
+gem 'rb-readline', require: false
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
