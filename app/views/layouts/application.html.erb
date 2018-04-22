@@ -11,7 +11,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
     body{
-        background-color: #B0E2FF;
+        background-color: #FFFF;
     }
  
     </style>
@@ -32,14 +32,17 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/ideas">Ideas</a></li>
+        <li><a href="/ideas">Ideas</a></li>
         <li ><%= link_to 'New Idea', new_idea_path %></li>
         <li><a href="/pages/info">Info</a></li>
       </ul>
       <p class="navbar-text pull-right">
 <% if user_signed_in? %>
-  
+  Logged in as <strong><%= current_user.user_name || current_user.email %></strong>.
+<%= link_to 'Edit Password', edit_user_registration_path, :class => 'navbar-link' %> |
+<%= link_to 'Edit Profile', edit_user_path, :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <%= image_tag current_user.gravatar_url, class: "gravatar_img" %>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>

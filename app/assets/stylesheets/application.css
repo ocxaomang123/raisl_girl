@@ -17,3 +17,27 @@ body { padding-top: 60px; }
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
+.navbar {
+  min-height: 38px;
+  background-color: #B0E2FF !important;
+  background-image: none !important;
+  
+}
+.navbar a.brand { font-size: 18px; }
+.navbar a.brand:hover {
+  color: #fff;
+  background-color: #00CC00;
+  text-decoration: none;
+}
+
+.navbar a {
+    color : #000000 !important;
+}
+
+.gravatar_img {
+    width: 30px;
+}
+footer {
+  background-color: #FFFF;
+  padding: 30px 0;
+}

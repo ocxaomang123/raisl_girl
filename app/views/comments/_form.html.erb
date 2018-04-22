@@ -1,22 +1,18 @@
 
-<%= form_for @comment, :html => {:multipart => true} do |form| %>
+<%= form_for comment, :html => {:multipart => true} do |form| %>
 
 <%= form.hidden_field :idea_id %>
-  <% if @comment.errors.any? %>
+  <% if comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
       <ul>
-      <% @comment.errors.full_messages.each do |message| %>
+      <% comment.errors.full_messages.each do |message| %>
 
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
-    <div class="field">
-  <%= f.label :picture %><br>
-  <%= f.file_field :picture %>
-</div>
   <% end %>
 
   <div class="field">
@@ -37,4 +33,6 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :idea_id, value: comment.idea_id %>
 <% end %>

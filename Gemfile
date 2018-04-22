@@ -13,6 +13,8 @@ group :production do
   gem 'pg'
 end
 gem 'carrierwave'
+gem 'gravtastic'
+
 
 gem 'mini_magick', '3.8.0'
 gem 'rb-readline', require: false
