@@ -13,6 +13,8 @@ group :production do
   gem 'pg'
 end
 gem 'carrierwave'
+
+gem 'mini_magick', '3.8.0'
 gem 'rb-readline', require: false
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -69,3 +71,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'net-ssh'
+gem 'devise'
